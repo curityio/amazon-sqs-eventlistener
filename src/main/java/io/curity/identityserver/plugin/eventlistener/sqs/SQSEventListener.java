@@ -54,8 +54,28 @@ public class SQSEventListener implements EventListener<AuditableEvent>
     @Override
     public void handle(AuditableEvent event)
     {
-        _logger.debug("Handling event of type : {} and data : {}", event.getAuditData().getType(), event.getAuditData().asMap());
-        _sqs.sendMessage(new SendMessageRequest(_config.getAmazonQueueUrl(),
-                _config.json().toJson(event.getAuditData().asMap())));
+        _config.handleEvents().forEach(eventType ->
+        {
+            Class<? extends AuditableEvent> eventTypeClass = null;
+            try
+            {
+                eventTypeClass = (Class<? extends AuditableEvent>) Class.forName("se.curity.identityserver.sdk.data.events" + eventType.name());
+            }
+            catch (ClassNotFoundException e)
+            {
+                _logger.debug("Class not found for event type : {}", eventType.name());
+            }
+            if (eventTypeClass != null && isEqual(event.getClass(), eventTypeClass))
+            {
+                _logger.debug("Handling event of type : {} and data : {}", event.getAuditData().getType(), event.getAuditData().asMap());
+                _sqs.sendMessage(new SendMessageRequest(_config.getAmazonQueueUrl(),
+                        _config.json().toJson(event.getAuditData().asMap())));
+            }
+        });
+    }
+
+    public boolean isEqual(Class<? extends AuditableEvent> event, Class<? extends AuditableEvent> event1)
+    {
+        return event.getName().equals(event1.getName());
     }
 }
