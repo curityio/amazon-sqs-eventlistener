@@ -56,8 +56,7 @@ public class SQSEventListener implements EventListener<AuditableEvent>
     {
         _config.handleEvents().forEach(eventType ->
         {
-            String[] className = event.getClass().getName().split("\\.");
-            if (eventType.name().equals(className[className.length - 1]))
+            if (eventType.name().equals(event.getClass().getSimpleName()))
             {
                 _logger.debug("Handling event of type : {} and data : {}",
                         event.getAuditData().getType(), event.getAuditData().asMap());

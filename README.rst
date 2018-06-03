@@ -1,8 +1,11 @@
-Amazon SQS Event Listener Plug-in
-=================================
+WIP: Amazon SQS Event Listener Plug-in
+======================================
 
 .. image:: https://travis-ci.org/curityio/amazon-sqs-eventlistener.svg?branch=master
      :target: https://travis-ci.org/curityio/amazon-sqs-eventlistener
+
+.. Note::
+     This project is a work in progress.
 
 This project provides an opens source SQS Event Listener plug-in for the Curity Identity Server.
 
