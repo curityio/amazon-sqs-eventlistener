@@ -54,8 +54,16 @@ public class SQSEventListener implements EventListener<AuditableEvent>
     @Override
     public void handle(AuditableEvent event)
     {
-        _logger.debug("Handling event of type : {} and data : {}", event.getAuditData().getType(), event.getAuditData().asMap());
-        _sqs.sendMessage(new SendMessageRequest(_config.getAmazonQueueUrl(),
-                _config.json().toJson(event.getAuditData().asMap())));
+        _config.handleEvents().forEach(eventType ->
+        {
+            if (eventType.name().equals(event.getClass().getSimpleName()))
+            {
+                _logger.debug("Handling event of type : {} and data : {}",
+                        event.getAuditData().getType(), event.getAuditData().asMap());
+                _sqs.sendMessage(new SendMessageRequest(_config.getAmazonQueueUrl(),
+                        _config.json().toJson(event.getAuditData().asMap())));
+            }
+        });
     }
+
 }

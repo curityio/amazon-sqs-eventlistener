@@ -38,15 +38,61 @@ public interface EventListenerConfiguration extends Configuration
     @Description("Url to Amazon SQS Queue.")
     String getAmazonQueueUrl();
 
-    List<Events> handleEvents();
+    List<EventType> handleEvents();
 
-    enum Events
+    enum EventType
     {
+        AccessTokenAuthenticationEvent,
+        AccessTokenOAuthEvent,
+        AccountCreatedScimEvent,
         AccountDeletedScimEvent,
+        AccountEvent,
+        AccountReadScimEvent,
+        AccountSearchScimEvent,
+        AccountUpdatedScimEvent,
+        ActivatedAccountEvent,
+        AuthenticationEvent,
+        AuthorizationCodeOAuthEvent,
+        ClientAuthenticationEvent,
+        ConfigurationChangedSystemEvent,
+        ConsumedAuthorizationCodeOAuthEvent,
+        ConsumedDeviceCodeOAuthEvent,
+        ConsumedInitialAccessTokenDcrOAuthEvent,
         CreatedAccountEvent,
         CreatedSsoSessionEvent,
-        AuthenticationEvent,
-        LogoutAuthenticationEvent
+        DelegationOauthEvent,
+        DeviceCodeOAuthEvent,
+        FailureClientAuthenticationEvent,
+        IdTokenOAuthEvent,
+        InitialAccessTokenDcrOAuthEvent,
+        IntrospectionOAuthEvent,
+        IssuedAccessTokenOAuthEvent,
+        IssuedAuthorizationCodeOAuthEvent,
+        IssuedDelegationOAuthEvent,
+        IssuedDeviceCodeOAuthEvent,
+        IssuedIdTokenOAuthEvent,
+        IssuedInitialAccessTokenDcrOAuthEvent,
+        IssuedRefreshTokenOAuthEvent,
+        LinkedAccountEvent,
+        LoginAuthenticationEvent,
+        LogoutAuthenticationEvent,
+        OAuthEvent,
+        ProfileAddedSystemEvent,
+        RefreshTokenOAuthEvent,
+        RegisteredDcrClientOAuthEvent,
+        RevokedAccessTokenOAuthEvent,
+        RevokedDelegationOAuthEvent,
+        RevokedInitialAccessTokenDcrOAuthEvent,
+        RevokedRefreshTokenOAuthEvent,
+        ScimEvent,
+        SessionEvent,
+        SuccessAuthenticationEvent,
+        SuccessClientAuthenticationEvent,
+        SuccessSsoAuthenticationEvent,
+        SystemEvent,
+        TokenOAuthEvent,
+        UserAuthenticationEvent,
+        UserInfoOAuthEvent
     }
 
     ExceptionFactory exceptionFactory();

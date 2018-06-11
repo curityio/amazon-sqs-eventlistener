@@ -1,8 +1,11 @@
-Amazon SQS Event Listener Plug-in
-=================================
+WIP: Amazon SQS Event Listener Plug-in
+======================================
 
-.. image:: https://travis-ci.org/curityio/sqs-eventlistener.svg?branch=master
-     :target: https://travis-ci.org/curityio/sqs-eventlistener
+.. image:: https://travis-ci.org/curityio/amazon-sqs-eventlistener.svg?branch=master
+     :target: https://travis-ci.org/curityio/amazon-sqs-eventlistener
+
+.. Note::
+     This project is a work in progress.
 
 This project provides an opens source SQS Event Listener plug-in for the Curity Identity Server.
 
@@ -25,7 +28,7 @@ The source is very easy to compile. To do so from a shell, issue this command: `
 Installation
 ~~~~~~~~~~~~
 
-To install this plug-in, either download a binary version available from the `releases section of this project's GitHub repository <https://github.com/curityio/sqs-eventlistener/releases>`_ or compile it from source (as described above). If you compiled the plug-in from source, the package will be placed in the ``target`` subdirectory. The resulting JAR file or the one downloaded from GitHub needs to placed in the directory ``${IDSVR_HOME}/usr/share/plugins/eventlisteners``. (The name of the last directory, ``eventlisteners``, which is the plug-in group, is arbitrary and can be anything.) After doing so, the plug-in will become available as soon as the node is restarted.
+To install this plug-in, either download a binary version available from the `releases section of this project's GitHub repository <https://github.com/curityio/amazon-sqs-eventlistener/releases>`_ or compile it from source (as described above). If you compiled the plug-in from source, the package will be placed in the ``target`` subdirectory. The resulting JAR file or the one downloaded from GitHub needs to placed in the directory ``${IDSVR_HOME}/usr/share/plugins/eventlisteners``. (The name of the last directory, ``eventlisteners``, which is the plug-in group, is arbitrary and can be anything.) After doing so, the plug-in will become available as soon as the node is restarted.
 
 .. note::
 
