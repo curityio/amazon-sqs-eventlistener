@@ -1,8 +1,11 @@
 WIP: Amazon SQS Event Listener Plug-in
 ======================================
 
-.. image:: https://travis-ci.org/curityio/amazon-sqs-eventlistener.svg?branch=master
-     :target: https://travis-ci.org/curityio/amazon-sqs-eventlistener
+.. image:: https://curity.io/assets/images/badges/amazon-sqs-eventlistener-quality.svg
+       :target: https://curity.io/resources/code-examples/status/
+       
+.. image:: https://curity.io/assets/images/badges/amazon-sqs-eventlistener-availability.svg
+       :target: https://curity.io/resources/code-examples/status/     
 
 .. Note::
      This project is a work in progress.
