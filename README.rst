@@ -1,10 +1,10 @@
 WIP: Amazon SQS Event Listener Plug-in
 ======================================
 
-.. image:: https://curity.io/assets/images/badges/amazon-sqs-eventlistener-quality.svg
+.. image:: https://img.shields.io/badge/quality-test-yellow
        :target: https://curity.io/resources/code-examples/status/
        
-.. image:: https://curity.io/assets/images/badges/amazon-sqs-eventlistener-availability.svg
+.. image:: https://img.shields.io/badge/availability-source-blue
        :target: https://curity.io/resources/code-examples/status/     
 
 .. Note::
